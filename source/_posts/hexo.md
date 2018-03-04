@@ -59,6 +59,8 @@ deploy:
   repo: https://github.com/YourgithubName/YourgithubName.github.io.git
   branch: master
 ```
+使用git方式进行部署，执行`npm install hexo-deployer-git --save`来安装所需的插件
+
 ### 执行命令
 
 在博客目录下分别执行Git命令
@@ -73,7 +75,7 @@ $ hexo deploy
 ## 绑定个人域名
 
 在`you-blog/source/`目录下创建CNAME文件，添加上域名
-比如本站添加为`www.akindman.com`
 设置DNS记录
 ![](/images/20180126232433.png)
 
+参考:`https://xuanwo.org/2015/03/26/hexo-intor/`
