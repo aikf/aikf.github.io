@@ -1,5 +1,5 @@
 ---
-title: hexo-syn
+title: hexo实现多终端同步
 date: 2018-03-04 15:30:45
 categories:
 - note
