@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AK&#39;s note">
 <meta property="og:description" content="Hexo - 快速、简洁且高效的博客框架，支持MarkdownGitHub Page 提供300M免费空间hexo的安装需要依赖Node.js,发布依赖Git在本地编辑，生成静态文件，通过git发布到GitHub  安装依赖Node.js: 下载地址Git: 下载地址 设置git账户12$ git config --global user.name &quot;Your Name&quot;$ git config">
 <meta property="og:image" content="http://blog.xiaoyanming.com/images/20180126232433.png">
-<meta property="og:updated_time" content="2018-03-04T01:49:20.996Z">
+<meta property="og:updated_time" content="2018-03-04T08:55:28.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo简明教程">
 <meta name="twitter:description" content="Hexo - 快速、简洁且高效的博客框架，支持MarkdownGitHub Page 提供300M免费空间hexo的安装需要依赖Node.js,发布依赖Git在本地编辑，生成静态文件，通过git发布到GitHub  安装依赖Node.js: 下载地址Git: 下载地址 设置git账户12$ git config --global user.name &quot;Your Name&quot;$ git config">
@@ -205,9 +205,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> you-blog-path</span><br><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
 <h2 id="设置GitHub"><a href="#设置GitHub" class="headerlink" title="设置GitHub"></a>设置GitHub</h2><p>将上面生成的公钥加入到GitHub中<br>新建仓库，名称为：yourname.github.io <strong>此处yourname必须为GitHub账户名</strong></p>
 <h2 id="发布网站"><a href="#发布网站" class="headerlink" title="发布网站"></a>发布网站</h2><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><figure class="highlight plain"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>使用git方式进行部署，执行<code>npm install hexo-deployer-git --save</code>来安装所需的插件</p>
 <h3 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h3><p>在博客目录下分别执行Git命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
 <h3 id="查看站点"><a href="#查看站点" class="headerlink" title="查看站点"></a>查看站点</h3><p>在浏览器中输入<code>http://yourgithubname.github.io</code> 查看站点</p>
-<h2 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h2><p>在<code>you-blog/source/</code>目录下创建CNAME文件，添加上域名<br>比如本站添加为<code>www.akindman.com</code><br>设置DNS记录<br><img src="/images/20180126232433.png" alt=""></p>
+<h2 id="绑定个人域名"><a href="#绑定个人域名" class="headerlink" title="绑定个人域名"></a>绑定个人域名</h2><p>在<code>you-blog/source/</code>目录下创建CNAME文件，添加上域名<br>设置DNS记录<br><img src="/images/20180126232433.png" alt=""></p>
+<p>参考:<code>https://xuanwo.org/2015/03/26/hexo-intor/</code></p>
 
       
 
