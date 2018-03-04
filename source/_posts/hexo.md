@@ -5,7 +5,7 @@ toc: true
 tags:
 - hexo
 categories:
-- 博客
+- note
 ---
 > Hexo - 快速、简洁且高效的博客框架，支持Markdown
 GitHub Page 提供300M免费空间
