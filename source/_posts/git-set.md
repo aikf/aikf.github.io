@@ -1,5 +1,5 @@
 ---
-title: git_set
+title: Git配置
 date: 2018-03-05 16:54:32
 categories:
 - note
