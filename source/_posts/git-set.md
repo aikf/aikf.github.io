@@ -6,7 +6,7 @@ categories:
 tags:
 - git
 ---
-## Git配置文件分类
+### Git配置文件分类
 GIt相关配置文件有三个：
 1. --system 系统级 /etc/gitconfig (windows:C:\Program Files\Git\mingw64\etc\gitconfig) 包含了适用于系统所有用户和所有项目的值。
 ![](/images/git/system)
@@ -14,10 +14,10 @@ GIt相关配置文件有三个：
 ![](/images/git/global)
 3. --local 当前项目 位于git项目目录中的.git/config 适用于特定git项目的配置。
 ![](/images/git/local)
-*注意：对于同一配置项，三个配置文件的优先级是1<2<3*
+**注意：对于同一配置项，三个配置文件的优先级是1<2<3**
 这里可以直接编辑配置文件，通过命令设置后会响应到这里。
 
-## 设置用户名与邮箱（用户标识，必要）
+### 设置用户名与邮箱（用户标识，必要）
 当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：
 ```bash
 git config --global user.name "aikf" #名称
@@ -25,7 +25,7 @@ git config --global user.email "aikfes@gmail.com #邮箱
 ```
 只需要做一次这个设置，如果你传递了--global 选项，因为Git将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要--global选项。 总之--global为全局配置，不加为某个项目的特定配置。
 
-## 添加或删除配置项
+### 添加或删除配置项
 1. 添加配置项
 ```text
 git config [--local|--global|--system] section.key value
@@ -34,14 +34,16 @@ section.key #区域下的键
 value #对应的值
 ```
 例如我们要在student区域下添加一个名称为height值为188的配置项，执行结果如下(bash需管理员身份运行)：
+
 ![](/images/git/system_config.png)
 
 2. 删除配置项
 `git config [--local|--global|--system] --unset section.key`
 将系统级的height配置项移除：
+
 ![](/images/git/system_unset_config.png)
 
-## 更多配置项
+### 更多配置项
 ```bash
 git config --global color.ui true   #打开所有的默认终端着色
 git config --global alias.ci commit   #别名 ci 是commit的别名
