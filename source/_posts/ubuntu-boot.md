@@ -32,3 +32,7 @@ $  sudo apt-get purge $(dpkg -l linux-{image,headers}-"[0-9]*" | awk '/ii/{print
 
 下面这三种方法也可以尝试一下，我接着按照如下半自动移除的方式，boot空间一下减小到25%。
 ![](images/ubuntu/boot1.png)
+
+*参考链接:*
+*https://askubuntu.com/questions/585736/cant-clean-a-full-boot-because-of-unmet-dependencies*
+*https://www.linuxidc.com/Linux/2016-05/131143.htm*
