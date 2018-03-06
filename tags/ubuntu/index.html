@@ -6,25 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://blog.xiaoyanming.com">
-  <title>Git配置 | AK&#39;s note</title>
+  <title>Tag: ubuntu | AK&#39;s note</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Git配置文件分类GIt相关配置文件有三个：  –system 系统级 /etc/gitconfig (windows:C:\Program Files\Git\mingw64\etc\gitconfig) 包含了适用于系统所有用户和所有项目的值。 –global 全局 ~/.gitconfig (windows:$HOME.gitconfig) 只适用于当前登录用户的配置。 –local 当前项">
-<meta name="keywords" content="git">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Git配置">
-<meta property="og:url" content="http://blog.xiaoyanming.com/2018/03/05/git-set/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="AK&#39;s note">
+<meta property="og:url" content="http://blog.xiaoyanming.com/tags/ubuntu/index.html">
 <meta property="og:site_name" content="AK&#39;s note">
-<meta property="og:description" content="Git配置文件分类GIt相关配置文件有三个：  –system 系统级 /etc/gitconfig (windows:C:\Program Files\Git\mingw64\etc\gitconfig) 包含了适用于系统所有用户和所有项目的值。 –global 全局 ~/.gitconfig (windows:$HOME.gitconfig) 只适用于当前登录用户的配置。 –local 当前项">
-<meta property="og:image" content="http://blog.xiaoyanming.com/images/git/system">
-<meta property="og:image" content="http://blog.xiaoyanming.com/images/git/global">
-<meta property="og:image" content="http://blog.xiaoyanming.com/images/git/local">
-<meta property="og:image" content="http://blog.xiaoyanming.com/images/git/system_config.png">
-<meta property="og:image" content="http://blog.xiaoyanming.com/images/git/system_unset_config.png">
-<meta property="og:updated_time" content="2018-03-06T14:03:51.660Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git配置">
-<meta name="twitter:description" content="Git配置文件分类GIt相关配置文件有三个：  –system 系统级 /etc/gitconfig (windows:C:\Program Files\Git\mingw64\etc\gitconfig) 包含了适用于系统所有用户和所有项目的值。 –global 全局 ~/.gitconfig (windows:$HOME.gitconfig) 只适用于当前登录用户的配置。 –local 当前项">
-<meta name="twitter:image" content="http://blog.xiaoyanming.com/images/git/system">
+<meta name="twitter:title" content="AK&#39;s note">
   
     <link rel="alternative" href="/atom.xml" title="AK&#39;s note" type="application/atom+xml">
   
@@ -176,97 +165,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git-set" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Git配置
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/03/06/ubuntu-boot/" class="archive-article-date">
+  	<time datetime="2018-03-06T14:04:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/03/06/ubuntu-boot/">解决Ubuntu Boot分区占用100%问题</a>
     </h1>
   
 
-        
-        <a href="/2018/03/05/git-set/" class="archive-article-date">
-  	<time datetime="2018-03-05T08:54:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Git配置文件分类"><a href="#Git配置文件分类" class="headerlink" title="Git配置文件分类"></a>Git配置文件分类</h3><p>GIt相关配置文件有三个：</p>
-<ol>
-<li>–system 系统级 /etc/gitconfig (windows:C:\Program Files\Git\mingw64\etc\gitconfig) 包含了适用于系统所有用户和所有项目的值。<br><img src="/images/git/system" alt=""></li>
-<li>–global 全局 ~/.gitconfig (windows:$HOME.gitconfig) 只适用于当前登录用户的配置。<br><img src="/images/git/global" alt=""></li>
-<li>–local 当前项目 位于git项目目录中的.git/config 适用于特定git项目的配置。<br><img src="/images/git/local" alt=""><br><strong>注意：对于同一配置项，三个配置文件的优先级是1&lt;2&lt;3</strong><br>这里可以直接编辑配置文件，通过命令设置后会响应到这里。</li>
-</ol>
-<h3 id="设置用户名与邮箱（用户标识，必要）"><a href="#设置用户名与邮箱（用户标识，必要）" class="headerlink" title="设置用户名与邮箱（用户标识，必要）"></a>设置用户名与邮箱（用户标识，必要）</h3><p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"aikf"</span> <span class="comment">#名称</span></span><br><span class="line">git config --global user.email <span class="string">"aikfes@gmail.com #邮箱</span></span><br></pre></td></tr></table></figure></p>
-<p>只需要做一次这个设置，如果你传递了–global 选项，因为Git将总是会使用该信息来处理你在系统中所做的一切操作。如果你希望在一个特定的项目中使用不同的名称或e-mail地址，你可以在该项目中运行该命令而不要–global选项。 总之–global为全局配置，不加为某个项目的特定配置。</p>
-<h3 id="添加或删除配置项"><a href="#添加或删除配置项" class="headerlink" title="添加或删除配置项"></a>添加或删除配置项</h3><ol>
-<li>添加配置项<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config [--local|--global|--system] section.key value</span><br><span class="line">[--local|--global|--system] #可选 对应本地，全局，系统不同级别的设置</span><br><span class="line">section.key #区域下的键</span><br><span class="line">value #对应的值</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>例如我们要在student区域下添加一个名称为height值为188的配置项，执行结果如下(bash需管理员身份运行)：</p>
-<p><img src="/images/git/system_config.png" alt=""></p>
-<ol>
-<li>删除配置项<br><code>git config [--local|--global|--system] --unset section.key</code><br>将系统级的height配置项移除：</li>
-</ol>
-<p><img src="/images/git/system_unset_config.png" alt=""></p>
-<h3 id="更多配置项"><a href="#更多配置项" class="headerlink" title="更多配置项"></a>更多配置项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">git config --global color.ui <span class="literal">true</span>   <span class="comment">#打开所有的默认终端着色</span></span><br><span class="line">git config --global alias.ci commit   <span class="comment">#别名 ci 是commit的别名</span></span><br><span class="line">[<span class="built_in">alias</span>]  </span><br><span class="line">co = checkout  </span><br><span class="line">ci = commit  </span><br><span class="line">st = status  </span><br><span class="line">pl = pull  </span><br><span class="line">ps = push  </span><br><span class="line">dt = difftool  </span><br><span class="line">l = <span class="built_in">log</span> --<span class="built_in">stat</span>  </span><br><span class="line">cp = cherry-pick  </span><br><span class="line">ca = commit -a  </span><br><span class="line">b = branch </span><br><span class="line"></span><br><span class="line">user.name  <span class="comment">#用户名</span></span><br><span class="line">user.email  <span class="comment">#邮箱</span></span><br><span class="line">core.editor  <span class="comment">#文本编辑器  </span></span><br><span class="line">merge.tool  <span class="comment">#差异分析工具  </span></span><br><span class="line">core.paper <span class="string">"less -N"</span>  <span class="comment">#配置显示方式  </span></span><br><span class="line">color.diff <span class="literal">true</span>  <span class="comment">#diff颜色配置  </span></span><br><span class="line">alias.co checkout  <span class="comment">#设置别名</span></span><br><span class="line">git config user.name  <span class="comment">#获得用户名</span></span><br><span class="line">git config core.filemode <span class="literal">false</span>  <span class="comment">#忽略修改权限的文件</span></span><br></pre></td></tr></table></figure>
-<p>所有config命令参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">语法: git config [&lt;options&gt;]        </span><br><span class="line">        </span><br><span class="line">文件位置        </span><br><span class="line">    --global                  #use global config file 使用全局配置文件</span><br><span class="line">    --system                  #use system config file 使用系统配置文件</span><br><span class="line">    --local                   #use repository config file    使用存储库配置文件</span><br><span class="line">    -f, --file &lt;file&gt;         #use given config file    使用给定的配置文件</span><br><span class="line">    --blob &lt;blob-id&gt;          #read config from given blob object    从给定的对象中读取配置</span><br><span class="line">        </span><br><span class="line">动作        </span><br><span class="line">    --get                     #get value: name [value-regex]    获得值：[值]名[正则表达式]</span><br><span class="line">    --get-all                 #get all values: key [value-regex]    获得所有值：[值]名[正则表达式]</span><br><span class="line">    --get-regexp              #get values for regexp: name-regex [value-regex]    得到的值根据正则</span><br><span class="line">    --get-urlmatch            #get value specific for the URL: section[.var] URL    为URL获取特定的值</span><br><span class="line">    --replace-all             #replace all matching variables: name value [value_regex]    替换所有匹配的变量：名称值[ value_regex ]</span><br><span class="line">    --add                     #add a new variable: name value    添加一个新变量：name值</span><br><span class="line">    --unset                   #remove a variable: name [value-regex]    删除一个变量名[值]：正则表达式</span><br><span class="line">    --unset-all               #remove all matches: name [value-regex]    删除所有匹配的正则表达式：名称[值]</span><br><span class="line">    --rename-section          #rename section: old-name new-name    重命名部分：旧名称 新名称</span><br><span class="line">    --remove-section          #remove a section: name    删除部分：名称</span><br><span class="line">    -l, --list                #list all    列出所有</span><br><span class="line">    -e, --edit                #open an editor    打开一个编辑器</span><br><span class="line">    --get-color               #find the color configured: slot [default]    找到配置的颜色：插槽[默认]</span><br><span class="line">    --get-colorbool           #find the color setting: slot [stdout-is-tty]    发现颜色设置：槽[ stdout是TTY ]</span><br><span class="line">        </span><br><span class="line">类型        </span><br><span class="line">    --bool                    #value is &quot;true&quot; or &quot;false&quot;    值是“真”或“假”。</span><br><span class="line">    --int                     #value is decimal number    值是十进制数。</span><br><span class="line">    --bool-or-int             #value is --bool or --int    值--布尔或int</span><br><span class="line">    --path                    #value is a path (file or directory name)    值是路径（文件或目录名）</span><br><span class="line">        </span><br><span class="line">其它        </span><br><span class="line">    -z, --null                #terminate values with NUL byte    终止值与null字节</span><br><span class="line">    --name-only               #show variable names only    只显示变量名</span><br><span class="line">    --includes                #respect include directives on lookup    尊重包括查找指令</span><br><span class="line">    --show-origin             #show origin of config (file, standard input, blob, command line)    显示配置（文件、标准输入、数据块、命令行）的来源</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/images/zfb.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/images/wx.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -279,123 +219,17 @@
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://blog.xiaoyanming.com/2018/03/05/git-set/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/03/06/ubuntu-boot/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          解决Ubuntu Boot分区占用100%问题
-        
-      </div>
-    </a>
   
   
-    <a href="/2018/03/04/helloworld/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">你好，世界！</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-  <div id="SOHUCS" sid="git-set" ></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "cytuPa5bs",
-        conf: "prod_a2061035bd09ef02c72ad0ddd58268eb"
-    });
-</script>
-</script>
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -418,9 +252,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

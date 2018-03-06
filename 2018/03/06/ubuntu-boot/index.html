@@ -9,15 +9,19 @@
   <title>解决Ubuntu Boot分区占用100%问题 | AK&#39;s note</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="我的电脑装了双系统，win10+ubuntu，作为一个linux菜鸟，装了系统本想给自己一个学习的环境，结果大多时候还是选择windows开机，后来打开ubuntu的时候提示boot空间不足，想想莫非是装系统的时候分配的空间太小，现在后悔都来不及，难道又要再重装系统？后来百度了一下，才知道是因为boot分区内含有许多内核版本，内核版本会自动升级，而旧的版本不会自己卸载，所以导致boot分区的空间越">
+<meta name="keywords" content="ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决Ubuntu Boot分区占用100%问题">
 <meta property="og:url" content="http://blog.xiaoyanming.com/2018/03/06/ubuntu-boot/index.html">
 <meta property="og:site_name" content="AK&#39;s note">
 <meta property="og:description" content="我的电脑装了双系统，win10+ubuntu，作为一个linux菜鸟，装了系统本想给自己一个学习的环境，结果大多时候还是选择windows开机，后来打开ubuntu的时候提示boot空间不足，想想莫非是装系统的时候分配的空间太小，现在后悔都来不及，难道又要再重装系统？后来百度了一下，才知道是因为boot分区内含有许多内核版本，内核版本会自动升级，而旧的版本不会自己卸载，所以导致boot分区的空间越">
-<meta property="og:updated_time" content="2018-03-06T15:15:48.890Z">
+<meta property="og:image" content="http://blog.xiaoyanming.com/images/ubuntu/boot.png">
+<meta property="og:image" content="http://blog.xiaoyanming.com/2018/03/06/ubuntu-boot/images/ubuntu/boot1.png">
+<meta property="og:updated_time" content="2018-03-06T15:24:14.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Ubuntu Boot分区占用100%问题">
 <meta name="twitter:description" content="我的电脑装了双系统，win10+ubuntu，作为一个linux菜鸟，装了系统本想给自己一个学习的环境，结果大多时候还是选择windows开机，后来打开ubuntu的时候提示boot空间不足，想想莫非是装系统的时候分配的空间太小，现在后悔都来不及，难道又要再重装系统？后来百度了一下，才知道是因为boot分区内含有许多内核版本，内核版本会自动升级，而旧的版本不会自己卸载，所以导致boot分区的空间越">
+<meta name="twitter:image" content="http://blog.xiaoyanming.com/images/ubuntu/boot.png">
   
     <link rel="alternative" href="/atom.xml" title="AK&#39;s note" type="application/atom+xml">
   
@@ -194,9 +198,9 @@
 <p><strong>查看系统已经安装的内核版本</strong><br><code>$ dpkg --get-selections | grep linux-image</code></p>
 <p><strong>删除旧的内核版本</strong><br><code>$ sudo apt purge linux-image-extra-4.10.0-28-generic</code></p>
 <p>我在这一步的时候提示出错，报了个依赖的错误，就是删除不了，又百度了好多相关的资料，最后才找到相关的答案：</p>
-<p>!()[/images/ubuntu/boot.png]<br>虽然英语不好，但是大概的意思还是看得懂的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ uname -r <span class="comment"># 查看已安装的内核版本，注意不要去删除它</span></span><br><span class="line">$ ls /boot <span class="comment"># 这会列出所有安装的版本，选择一两个强制删除</span></span><br><span class="line">$ sudo dpkg --force-all -P linux-image-3.13.0-32-generic <span class="comment"># 强制删除</span></span><br><span class="line">$ sudo apt-get install -f <span class="comment"># 尝试修复依赖</span></span><br><span class="line">$  sudo apt-get purge $(dpkg -l linux-&#123;image,headers&#125;-<span class="string">"[0-9]*"</span> | awk <span class="string">'/ii/&#123;print $2&#125;'</span> | grep -ve <span class="string">"<span class="variable">$(uname -r | sed -r 's/-[a-z]+//')</span>"</span>) <span class="comment"># 最后执行清理旧版本命令</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/ubuntu/boot.png" alt=""><br>虽然英语不好，但是大概的意思还是看得懂的。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ uname -r <span class="comment"># 查看已安装的内核版本，注意不要去删除它</span></span><br><span class="line">$ ls /boot <span class="comment"># 这会列出所有安装的版本，选择一两个强制删除</span></span><br><span class="line">$ sudo dpkg --force-all -P linux-image-3.13.0-32-generic <span class="comment"># 强制删除</span></span><br><span class="line">$ sudo apt-get install -f <span class="comment"># 尝试修复依赖</span></span><br><span class="line">$  sudo apt-get purge $(dpkg -l linux-&#123;image,headers&#125;-<span class="string">"[0-9]*"</span> | awk <span class="string">'/ii/&#123;print $2&#125;'</span> | grep -ve <span class="string">"<span class="variable">$(uname -r | sed -r 's/-[a-z]+//')</span>"</span>) <span class="comment"># 最后执行清理旧版本命令</span></span><br></pre></td></tr></table></figure></p>
 <p>刚开始的时候只强制删除了一个版本，结果修复依赖的时候还是报错了，查了下boot又是100%，接着我一次多删除了几个版本，这才修复成功。</p>
-<p>下面这三种方法也可以尝试一下，我接着按照如下半自动移除的方式，boot空间一下减小到25%。<br>!()[images/ubuntu/boot1.png]</p>
+<p>下面这三种方法也可以尝试一下，我接着按照如下半自动移除的方式，boot空间一下减小到25%。<br><img src="images/ubuntu/boot1.png" alt=""></p>
 
       
 
@@ -236,7 +240,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/note//" class="article-tag-list-link color5">note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -443,6 +469,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
             
             <div class="clearfix"></div>
